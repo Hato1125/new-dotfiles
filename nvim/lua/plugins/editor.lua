@@ -9,7 +9,7 @@ return {
       '3rd/image.nvim',
     },
     config = function()
-      require('neo-tree').setup({
+      require('neo-tree').setup{
         filesystem = {
           hide_dotfiles = true,
           hide_gitignored = true,
@@ -19,16 +19,25 @@ return {
           }
         },
         window = {
-	        mappings = {
-	          ['r'] = 'rename',
-	          ['a'] = 'add',
-	          ['c'] = 'copy',
+          mappings = {
+            ['r'] = 'rename',
+            ['a'] = 'add',
+            ['c'] = 'copy',
             ['d'] = 'delete',
-	          ['p'] = 'paste_from_clipboard',
+            ['p'] = 'paste_from_clipboard',
             ['H'] = 'toggle_hidden',
-	        }
-	      }
-      })
+          }
+        }
+      }
+    end
+  },
+  {
+    'akinsho/toggleterm.nvim',
+    version = '*',
+    config = function()
+      require('toggleterm').setup{
+        open_mapping = [[<c-\>]],
+      }
     end
   },
 }
