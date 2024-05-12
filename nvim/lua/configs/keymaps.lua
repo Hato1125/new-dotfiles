@@ -13,5 +13,5 @@ vim.keymap.set('n', '<leader>j', '<c-w>j')
 vim.keymap.set('n', '<leader>k', '<c-w>k')
 vim.keymap.set('n', '<leader>l', '<c-w>l')
 
-vim.keymap.set('n', '<leader>ff', ':Neotree toggle<return>')
-vim.keymap.set('n', '<leader>fb', ':Neotree toggle show buffers<return>')
+vim.keymap.set('n', '<leader>fb', ':Neotree toggle<return>')
+vim.keymap.set('n', '<leader>ff', ':Neotree toggle show buffers<return>')
