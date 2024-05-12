@@ -1,8 +1,2 @@
-[helpers]
-
-[default]
-depends = []
-
 [default.files]
-
-[default.variables]
+nvim = "~/.config/nvim"
