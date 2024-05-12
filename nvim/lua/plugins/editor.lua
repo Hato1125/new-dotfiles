@@ -2,6 +2,9 @@ return {
   {
     'nvim-neo-tree/neo-tree.nvim',
     branch = 'v3.x',
+    cmd = {
+      'Neotree',
+    },
     dependencies = {
       'nvim-lua/plenary.nvim',
       'nvim-tree/nvim-web-devicons',
@@ -34,6 +37,10 @@ return {
   {
     'akinsho/toggleterm.nvim',
     version = '*',
+    keys = {
+      { '<c-\\>', 'i' },
+      { '<c-\\>', 'n' },
+    },
     config = function()
       require('toggleterm').setup{
         open_mapping = [[<c-\>]],

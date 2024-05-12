@@ -4,6 +4,7 @@ return {
     name = 'arctic',
     branch = 'main',
     priority = 1000,
+    event = 'VimEnter',
     dependencies = {
       'rktjmp/lush.nvim'
     },

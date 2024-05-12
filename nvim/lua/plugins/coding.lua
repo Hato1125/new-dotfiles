@@ -2,6 +2,7 @@ return {
   {
     'neoclide/coc.nvim',
     branch = "release",
+    event = 'BufRead',
     config = function()
       vim.g.coc_global_extensions = {
         'coc-clangd',
@@ -15,6 +16,7 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     build = ":TSUpdate",
+    event = 'BufRead',
     config = function()
       require('nvim-treesitter.configs').setup{
         ensure_installed = {
