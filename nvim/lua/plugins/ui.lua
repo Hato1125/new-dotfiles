@@ -1,15 +1,28 @@
 return {
   {
-    'rockyzhang24/arctic.nvim',
-    name = 'arctic',
-    branch = 'main',
-    priority = 1000,
+    'm6vrm/gruber.vim',
     event = 'VimEnter',
-    dependencies = {
-      'rktjmp/lush.nvim'
-    },
     config = function()
-      vim.cmd('colorscheme arctic')
+      vim.cmd.colorscheme('gruber')
+    end,
+  },
+  {
+    'xiyaowong/transparent.nvim',
+    event = 'VimEnter',
+    config = function()
+      vim.cmd('TransparentEnable')
     end
   },
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    main = 'ibl',
+    event = 'BufRead',
+    config = function()
+      require("ibl").setup{
+        indent = {
+          char = '│'
+        }
+      }
+    end
+  }
 }

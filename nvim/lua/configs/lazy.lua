@@ -8,4 +8,9 @@ require('lazy').setup({
   ui = {
     border = 'rounded'
   },
+  performance = {
+    cache = {
+      enabled = true,
+    }
+  }
 })
