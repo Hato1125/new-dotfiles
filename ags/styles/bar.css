@@ -1,0 +1,27 @@
+.bar-window {
+  background-color: #141218;
+  border-top: 1px solid #211F24
+}
+
+.bar-label {
+  font: 14px "Noto Sans CJK HK";
+  font-weight: bold;
+}
+
+.wifi-icon {
+  color: #ff0000;
+}
+
+.start-widget {
+  margin: 7px 0px 7px 8px;
+  padding: 6px 16px 6px 16px;
+  background-color: #1D1B20;
+  border-radius: 9999px;
+}
+
+.right-widget {
+  margin: 7px 8px 7px 0;
+  padding: 6px 16px 6px 16px;
+  background-color: #1D1B20;
+  border-radius: 9999px;
+}

@@ -1,2 +1,3 @@
 [default.files]
+ags = "~/.config/ags"
 nvim = "~/.config/nvim"
