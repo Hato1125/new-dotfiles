@@ -13,16 +13,14 @@ const battery_icons = [
 ]
 
 const battery_charging_icons = [
-  "battery_charging_0",
-  "battery_charging_10",
+  "battery_charging_full",
   "battery_charging_20",
   "battery_charging_30",
-  "battery_charging_40",
   "battery_charging_50",
   "battery_charging_60",
-  "battery_charging_70",
   "battery_charging_80",
   "battery_charging_90",
+  "battery_full",
 ]
 
 export default () => Widget.Box({
@@ -31,12 +29,12 @@ export default () => Widget.Box({
     materialIcon(
       "battery_0_bar", {
         setup: self => self.hook(battery, () => {
-          const wifi_element = battery.charging ? 10 : 100 / 8
-          let wifi_index = Math.floor(battery.percent / wifi_element - 1)
-          if(battery.charging)
-            self.label = battery_charging_icons[wifi_index]
-          else
-            self.label = battery_icons[wifi_index]
+          const element = 100 / 8
+          const index = Math.floor(battery.percent / element)
+          const icons = battery.charging
+            ? battery_charging_icons
+            : battery_icons
+          self.label = icons[index]
         }),
         css: "margin: 0 8px 0 0"
       }),

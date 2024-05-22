@@ -15,14 +15,13 @@ export default () => Widget.Box({
     materialIcon(
       "network_wifi_0_bar", {
         setup: self => self.hook(network, () => {
-          if(network.wifi.internet == "disconnected") {
-            self.label = "signal_wifi_off"
-          } else if(network.wifi.internet == "connecting") {
+          if(network.wifi.internet == "disconnected"
+            || network.wifi.internet == "connecting") {
             self.label = "signal_wifi_off"
           }else {
-            const wifi_element = 100 / 5
-            let wifi_index = Math.floor(network.wifi.strength / wifi_element)
-            self.label = wifi_icons[wifi_index]
+            const element = 100 / 5
+            const index = Math.floor(network.wifi.strength / element)
+            self.label = wifi_icons[index]
           }
         }),
         css: "margin: 0 8px 0 0"

@@ -3,6 +3,7 @@ import date from "./date.js"
 import battery from "./battery.js"
 import title from "./title.js"
 import wifi from "./wifi.js"
+import volume from "./volume.js"
 
 export default (monitor) => Widget.Window({
   monitor: monitor,
@@ -41,6 +42,7 @@ export default (monitor) => Widget.Window({
         Widget.Box({
           class_name: "right-widget",
           children: [
+            volume(),
             wifi(),
             battery(),
           ]
