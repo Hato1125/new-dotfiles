@@ -1,0 +1,15 @@
+@import url("./bar.css");
+
+.material-icon {
+  font-family: "Material Symbols Rounded", "MaterialSymbolsRounded", "Material Symbols Outlined", "Material Symbols Sharp";
+  font-size: 17px;
+  font-weight: bold;
+  color: #fff9ff;
+  padding: 1px 0 0 0;
+}
+
+.common-label {
+  font: 14px "Noto Sans CJK HK";
+  font-weight: bold;
+  color: #fff9ff;
+}
