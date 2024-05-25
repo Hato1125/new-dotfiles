@@ -23,24 +23,13 @@ const battery_charging_icons = [
   "battery_full",
 ]
 
-export default () => Widget.Box({
-  css: "margin: 0 8px 0 8px",
-  children: [
-    materialIcon(
-      "battery_0_bar", {
-        setup: self => self.hook(battery, () => {
-          const element = 100 / 8
-          const index = Math.floor(battery.percent / element)
-          const icons = battery.charging
-            ? battery_charging_icons
-            : battery_icons
-          self.label = icons[index]
-        }),
-        css: "margin: 0 8px 0 0"
-      }),
-    Widget.Label({
-      class_name: "common-label",
-      label: battery.bind("percent").as(p => `${p}%`)
-    })
-  ]
+export default () => materialIcon("battery_0_bar", {
+  setup: self => self.hook(battery, () => {
+    const element = 100 / 7
+    const index = Math.floor(battery.percent / element)
+    const icons = battery.charging
+      ? battery_charging_icons
+      : battery_icons
+    self.label = icons[index]
+  })
 })

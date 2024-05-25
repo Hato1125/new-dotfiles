@@ -1,27 +1,24 @@
 .bar-window {
-  background-color: #141218;
-  border-top: 1px solid #211F24
+  background-color: @surface;
+  border-top: 1px solid @container-normal;
 }
 
-.bar-label {
-  font: 14px "Noto Sans CJK HK";
-  font-weight: bold;
-}
-
-.wifi-icon {
-  color: #ff0000;
-}
-
-.start-widget {
-  margin: 7px 0px 7px 8px;
-  padding: 6px 16px 6px 16px;
-  background-color: #1D1B20;
+.start-content {
+  margin: 6px 0px 6px 8px;
+  padding: 5px 16px 5px 16px;
+  background-color: @container-low;
   border-radius: 9999px;
 }
 
-.right-widget {
-  margin: 7px 8px 7px 0;
-  padding: 6px 16px 6px 16px;
-  background-color: #1D1B20;
+.end-content {
+  margin: 6px 8px 6px 0;
+  padding: 5px 16px 5px 16px;
+  background-color: @container-low;
   border-radius: 9999px;
+}
+
+.quik-toggle-button {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
 }

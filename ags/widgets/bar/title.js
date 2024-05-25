@@ -1,8 +1,7 @@
-const hyprland = await Service.import("hyprland")
+import { label, content } from "../../libs/widget.js"
+import { hyprland } from "../../libs/services.js"
 
-export default () => Widget.Label({
-  class_name: "common-label",
+export default () => label(hyprland.active.client.bind("title"), {
   truncate: "end",
-  maxWidthChars: 60,
-  label: hyprland.active.client.bind("title"),
+  maxWidthChars: 60
 })

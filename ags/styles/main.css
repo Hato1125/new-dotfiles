@@ -1,15 +1,49 @@
+@import url("./color.css");
 @import url("./bar.css");
 
-.material-icon {
-  font-family: "Material Symbols Rounded", "MaterialSymbolsRounded", "Material Symbols Outlined", "Material Symbols Sharp";
-  font-size: 17px;
+label {
+  color: @on-surface;
+  font-family: "Noto Sans CJK HK";
+  font-size: 14px;
   font-weight: bold;
-  color: #fff9ff;
-  padding: 1px 0 0 0;
 }
 
-.common-label {
-  font: 14px "Noto Sans CJK HK";
-  font-weight: bold;
-  color: #fff9ff;
+button {
+  background-color: @primary;
+  border-radius: 9999px;
+  padding: 5px 10px;
+}
+
+button label {
+  color: @on-primary
+}
+
+scale slider {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+scale highlight {
+  background-color: @primary;
+  min-height: 30px;
+  border-radius: 9999px;
+}
+
+scale trough {
+  background-color: @container-high;
+  min-height: 30px;
+  border-radius: 9999px;
+}
+
+.material-icon {
+  padding: 1px 0 0 0;
+  color: @on-surface;
+  font-family:
+    "Material Symbols Rounded",
+    "MaterialSymbolsRounded",
+    "Material Symbols Outlined",
+    "Material Symbols Sharp";
+  font-size: 19px;
+  font-weight: 600;
 }
