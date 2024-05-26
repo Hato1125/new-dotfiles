@@ -68,3 +68,43 @@ export const button = (
   onClicked: clicked,
   ...property
 })
+
+export const iconButton = (
+  icon,
+  clicked,
+  property = {}
+) => Widget.Button({
+  child: materialIcon(icon),
+  onClicked: clicked,
+  ...property
+})
+
+export const textButton = (
+  text,
+  clicked,
+  property = {}
+) => Widget.Button({
+  child: label(text),
+  onClicked: clicked,
+  ...property
+})
+
+export const iconToggleButton = (
+  icon,
+  toggle,
+  property = {}
+) => Widget.ToggleButton({
+  child: materialIcon(icon),
+  onToggled: toggle,
+  ...property
+})
+
+export const textToggleButton = (
+  text,
+  toggle,
+  property = {}
+) => Widget.ToggleButton({
+  child: label(text),
+  onToggled: toggle,
+  ...property
+})

@@ -5,14 +5,14 @@
 
 .start-content {
   margin: 6px 0px 6px 8px;
-  padding: 5px 16px 5px 16px;
+  padding: 4px 16px 4px 16px;
   background-color: @container-low;
   border-radius: 9999px;
 }
 
 .end-content {
   margin: 6px 8px 6px 0;
-  padding: 5px 16px 5px 16px;
+  padding: 4px 16px 4px 16px;
   background-color: @container-low;
   border-radius: 9999px;
 }
@@ -21,4 +21,28 @@
   margin: 0;
   padding: 0;
   background-color: transparent;
+}
+
+.screenshot-button {
+  margin: 0;
+  padding: 0 8px 0 8px;
+  background-color: transparent;
+}
+
+.screenshot-button:hover {
+  background-color: @container-high;
+}
+
+.screenshot-button:active {
+  background-color: @container-highest;
+}
+
+.recording-button {
+  margin: 0;
+  padding: 0 8px 0 8px;
+  background-color: transparent;
+}
+
+.recording-button:checked {
+  background-color: @error-container;
 }
