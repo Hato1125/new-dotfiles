@@ -12,5 +12,8 @@ require('lazy').setup({
     cache = {
       enabled = true,
     }
+  },
+  change_detection = {
+    enabled = false
   }
 })
