@@ -1,24 +1,21 @@
 return {
   {
-    'm6vrm/gruber.vim',
-    event = 'VimEnter',
+    'comfysage/evergarden',
+    priority = 1000,
+    opts = {
+      transparent_background = true,
+      contrast_dark = 'hard',
+    },
     config = function()
-      vim.cmd.colorscheme('gruber')
+      vim.cmd.colorscheme('evergarden')
     end,
-  },
-  {
-    'xiyaowong/transparent.nvim',
-    event = 'VimEnter',
-    config = function()
-      vim.cmd('TransparentEnable')
-    end
   },
   {
     'lukas-reineke/indent-blankline.nvim',
     main = 'ibl',
     event = 'BufRead',
     config = function()
-      require("ibl").setup{
+      require('ibl').setup{
         indent = {
           char = '│'
         }
@@ -27,8 +24,21 @@ return {
   },
   {
     'norcalli/nvim-colorizer.lua',
+    event = 'BufRead',
     config = function()
-       require('colorizer').setup()
+       require('colorizer').setup{
+       }
+    end
+  },
+  {
+    'nvim-lualine/lualine.nvim',
+    event = 'VimEnter',
+    dependencies = {
+      'nvim-tree/nvim-web-devicons'
+    },
+    config = function()
+      require('lualine').setup {
+      }
     end
   }
 }
