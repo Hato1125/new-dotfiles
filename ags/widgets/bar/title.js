@@ -1,7 +1,13 @@
-import { label, content } from "../../libs/widget.js"
+import { materialIcon } from "../../libs/icons.js"
 import { hyprland } from "../../libs/services.js"
+import { label } from "../../libs/widget.js"
+import { column } from "../../libs/layout.js"
 
-export default () => label(hyprland.active.client.bind("title"), {
-  truncate: "end",
-  maxWidthChars: 60
-})
+export default () => column([
+  materialIcon("label_important"),
+  label(
+    hyprland.active.client.bind("title"), {
+      truncate: "end",
+      maxWidthChars: 50
+  })
+], 4)

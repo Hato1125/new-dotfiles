@@ -1,5 +1,7 @@
 import { materialIcon } from "../../libs/icons.js"
 import { battery } from "../../libs/services.js"
+import { label } from "../../libs/widget.js"
+import { column } from "../../libs/layout.js"
 
 const battery_icons = [
   "battery_0_bar",
@@ -23,7 +25,7 @@ const battery_charging_icons = [
   "battery_full",
 ]
 
-export default () => materialIcon("battery_0_bar", {
+const batteryIcon = () => materialIcon("battery_0_bar", {
   setup: self => self.hook(battery, () => {
     const element = 100 / 7
     const index = Math.floor(battery.percent / element)
@@ -33,3 +35,12 @@ export default () => materialIcon("battery_0_bar", {
     self.label = icons[index]
   })
 })
+
+const batteryLabel = () => label(
+  battery.bind("percent").as(p => `${p}%`)
+)
+
+export default () => column([
+  batteryIcon(),
+  batteryLabel()
+], 4, "content")

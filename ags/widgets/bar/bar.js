@@ -12,40 +12,39 @@ import {
   toggleColumn
 } from "../../libs/layout.js"
 
-import clock from "./clock.js"
-import date from "./date.js"
+import dates from "./dates.js"
 import battery from "./battery.js"
+import workspace from "./workspace.js"
 import title from "./title.js"
 import wifi from "./wifi.js"
 import volume from "./volume.js"
+import bluetooth from "./bluetooth.js"
 import screenshot from "./screenshot.js"
-import recoding from "./recoding.js"
 
 export default (monitor) => barWindow(
   monitor,
-  barPosition.bottom,
-  centerContent(
-    content("", [
+  barPosition.top,
+  content("bar-content", [
+    centerContent(
       column([
-        date(),
-        clock()
-      ], 16, "start-content")
-    ]),
-    content("", [
-      title()
-    ]),
-    content("", [
-      hexpand(),
+        screenshot()
+      ], 16, "start-content"),
       column([
-        recoding(),
-        screenshot(),
-      ], 0, "end-content"),
-      toggleColumn([
+        column([
+          title(),
+          workspace(),
+        ],16, "content"),
+        dates(),
+        battery(),
         volume(),
-        wifi(),
-        battery()
-      ], 16, "end-content", "quik-toggle-button", () => {
-      }),
-    ])
-  )
+      ], 16),
+      content("", [
+        hexpand(),
+        column([
+          bluetooth(),
+          wifi()
+        ], 16, "end-content"),
+      ])
+    )
+  ])
 )

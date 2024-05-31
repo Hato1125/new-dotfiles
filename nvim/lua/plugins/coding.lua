@@ -3,6 +3,10 @@ return {
     'neoclide/coc.nvim',
     branch = "release",
     event = 'BufRead',
+    keys = {
+      { '<leader>gd', '<Plug>(coc-definition)' },
+      { '<leader>gy', '<Plug>(coc-type-definition)' },
+    },
     config = function()
       vim.g.coc_global_extensions = {
         'coc-clangd',

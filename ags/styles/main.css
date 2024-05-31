@@ -3,19 +3,9 @@
 
 label {
   color: @on-surface;
-  font-family: "Noto Sans CJK HK";
-  font-size: 14px;
-  font-weight: bold;
-}
-
-button {
-  background-color: @primary;
-  border-radius: 9999px;
-  padding: 5px 10px;
-}
-
-button label {
-  color: @on-primary
+  font-family:  "Rubik", "Noto Sans CJK HK";
+  font-size: 15px;
+  font-weight: normal;
 }
 
 scale slider {
@@ -37,13 +27,14 @@ scale trough {
 }
 
 .material-icon {
-  padding: 1px 0 0 0;
+  margin: 0;
+  padding: 0;
   color: @on-surface;
   font-family:
     "Material Symbols Rounded",
     "MaterialSymbolsRounded",
     "Material Symbols Outlined",
     "Material Symbols Sharp";
-  font-size: 19px;
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: normal;
 }
