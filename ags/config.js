@@ -4,5 +4,6 @@ App.config({
   style: "./styles/main.css",
   windows: [
     bar(0),
+    bar(1),
   ]
 })

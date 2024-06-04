@@ -1,13 +1,9 @@
 return {
   {
-    'comfysage/evergarden',
-    priority = 1000,
-    opts = {
-      transparent_background = true,
-      contrast_dark = 'hard',
-    },
+    'Shatur/neovim-ayu',
     config = function()
-      vim.cmd.colorscheme('evergarden')
+      vim.cmd("set background=light")
+      vim.cmd.colorscheme('ayu')
     end,
   },
   {

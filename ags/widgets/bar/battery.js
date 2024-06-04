@@ -3,7 +3,7 @@ import { battery } from "../../libs/services.js"
 import { label } from "../../libs/widget.js"
 import { column } from "../../libs/layout.js"
 
-const battery_icons = [
+const batteryIcons = [
   "battery_0_bar",
   "battery_1_bar",
   "battery_2_bar",
@@ -14,7 +14,7 @@ const battery_icons = [
   "battery_full",
 ]
 
-const battery_charging_icons = [
+const batteryChargingIcons = [
   "battery_charging_full",
   "battery_charging_20",
   "battery_charging_30",
@@ -30,8 +30,8 @@ const batteryIcon = () => materialIcon("battery_0_bar", {
     const element = 100 / 7
     const index = Math.floor(battery.percent / element)
     const icons = battery.charging
-      ? battery_charging_icons
-      : battery_icons
+      ? batteryChargingIcons
+      : batteryIcons
     self.label = icons[index]
   })
 })
