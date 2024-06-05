@@ -18,5 +18,9 @@ return {
       "InsertLeave",
       "TextChanged"
     }
+  },
+  {
+     'IogaMaster/neocord',
+      event = "VeryLazy"
   }
 }

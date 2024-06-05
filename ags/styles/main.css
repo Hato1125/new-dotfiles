@@ -5,7 +5,7 @@ label {
   color: @on-surface;
   font-family:  "Rubik", "Noto Sans CJK HK";
   font-size: 15px;
-  font-weight: normal;
+  font-weight: 500;
 }
 
 scale slider {
@@ -36,5 +36,5 @@ scale trough {
     "Material Symbols Outlined",
     "Material Symbols Sharp";
   font-size: 22px;
-  font-weight: normal;
+  font-weight: 500;
 }

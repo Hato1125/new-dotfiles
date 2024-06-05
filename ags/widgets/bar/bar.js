@@ -27,7 +27,6 @@ export default (monitor) => barWindow(
   content("bar-content", [
     centerContent(
       column([
-        screenshot()
       ], 16, "start-content"),
       column([
         column([
