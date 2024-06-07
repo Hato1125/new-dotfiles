@@ -1,10 +1,12 @@
 import {
   barWindow,
+  popupWindow,
   barPosition,
   centerContent,
   content,
   button,
-  hexpand
+  hexpand,
+  contentToggleButton
 } from "../../libs/widget.js"
 
 import {
@@ -37,12 +39,16 @@ export default (monitor) => barWindow(
         battery(),
         volume(),
       ], 16),
-      content("", [
+      content("end-content", [
         hexpand(),
-        column([
-          bluetooth(),
-          wifi()
-        ], 16, "end-content"),
+        contentToggleButton(
+          column([
+            bluetooth(),
+            wifi()
+          ], 16),
+          () => {
+          }
+        )
       ])
     )
   ])

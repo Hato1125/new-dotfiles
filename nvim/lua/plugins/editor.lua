@@ -19,8 +19,4 @@ return {
       "TextChanged"
     }
   },
-  {
-     'IogaMaster/neocord',
-      event = "VeryLazy"
-  }
 }

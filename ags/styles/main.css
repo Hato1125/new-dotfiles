@@ -1,6 +1,10 @@
 @import url("./color.css");
 @import url("./bar.css");
 
+button {
+  background-color: transparent;
+}
+
 label {
   color: @on-surface;
   font-family:  "Rubik", "Noto Sans CJK HK";

@@ -1,9 +1,9 @@
 return {
   {
-    'Shatur/neovim-ayu',
+    'EdenEast/nightfox.nvim',
     config = function()
       vim.cmd("set background=light")
-      vim.cmd.colorscheme('ayu')
+      vim.cmd.colorscheme('dawnfox')
     end,
   },
   {

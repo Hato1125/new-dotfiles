@@ -20,6 +20,21 @@ export const barWindow = (
   ...property
 })
 
+export const popupWindow = (
+  monitor,
+  position,
+  children,
+  ...property
+) => Widget.Window({
+  class_name: "bar-window",
+  name: `popup-window`,
+  exclusivity: "exclusive",
+  monitor: monitor,
+  anchor: position,
+  child: children,
+  ...property
+})
+
 export const content = (
   name,
   children,
@@ -105,6 +120,16 @@ export const textToggleButton = (
   property = {}
 ) => Widget.ToggleButton({
   child: label(text),
+  onToggled: toggle,
+  ...property
+})
+
+export const contentToggleButton = (
+  child,
+  toggle,
+  property = {}
+) => Widget.ToggleButton({
+  child: child,
   onToggled: toggle,
   ...property
 })
