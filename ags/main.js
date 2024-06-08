@@ -1,5 +1,3 @@
-import bar from "./widgets/bar/bar.js"
-
 import { hyprland } from "./libs/services.js"
 import { STYLE_SHEET } from "./settings.js"
 
@@ -9,7 +7,7 @@ function addWindows(window) {
   })
 }
 
-export function setting() {
+export function setting(windowTypes) {
   hyprland.connect("monitor-added", (_, name) => {
     const monitorIndex = hyprland.monitors.findIndex((monitor) => {
       return monitor.name === name
@@ -20,16 +18,21 @@ export function setting() {
         if(monitorIndex === window.monitor)
           App.removeWindow(window)
       })
-      App.addWindow(bar(monitorIndex))
+
+      windowTypes.forEach((windowType) => {
+        App.addWindow(windowType(monitorIndex))
+      })
     }
   });
 }
 
-export function running() {
+export function running(windowsTypes) {
   App.config({
     style: STYLE_SHEET,
     onConfigParsed: () => {
-      addWindows(bar)
+      windowsTypes.forEach((windowType) => {
+        addWindows(windowType)
+      })
     }
   })
 }
