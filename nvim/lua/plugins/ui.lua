@@ -81,5 +81,12 @@ return {
     config = function()
       require('telescope').load_extension 'file_browser'
     end
+  },
+  {
+    'norcalli/nvim-colorizer.lua',
+    event = 'BufRead',
+    config = function()
+      require('colorizer').setup()
+    end
   }
 }

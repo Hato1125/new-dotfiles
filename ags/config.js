@@ -1,8 +1,11 @@
-import bar from "./widgets/bar/bar.js"
+import {
+  setting,
+  running
+} from "./main.js"
 
-App.config({
-  style: "./styles/main.css",
-  windows: [
-    bar(0),
-  ]
-})
+try {
+  setting()
+  running()
+} catch(error) {
+  print(error)
+}

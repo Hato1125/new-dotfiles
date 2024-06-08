@@ -9,25 +9,7 @@ label {
   color: @on-surface;
   font-family:  "Rubik", "Noto Sans CJK HK";
   font-size: 15px;
-  font-weight: 500;
-}
-
-scale slider {
-  background-color: transparent;
-  border: none;
-  box-shadow: none;
-}
-
-scale highlight {
-  background-color: @primary;
-  min-height: 30px;
-  border-radius: 9999px;
-}
-
-scale trough {
-  background-color: @container-high;
-  min-height: 30px;
-  border-radius: 9999px;
+  font-weight: 400;
 }
 
 .material-icon {
@@ -40,5 +22,5 @@ scale trough {
     "Material Symbols Outlined",
     "Material Symbols Sharp";
   font-size: 22px;
-  font-weight: 500;
+  font-weight: 400;
 }

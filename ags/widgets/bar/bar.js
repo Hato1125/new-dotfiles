@@ -14,6 +14,8 @@ import {
   toggleColumn
 } from "../../libs/layout.js"
 
+import { hyprland } from "../../libs/services.js"
+
 import dates from "./dates.js"
 import battery from "./battery.js"
 import workspace from "./workspace.js"
@@ -21,35 +23,45 @@ import title from "./title.js"
 import wifi from "./wifi.js"
 import volume from "./volume.js"
 import bluetooth from "./bluetooth.js"
-import screenshot from "./screenshot.js"
+
+const startLayout = () => column([
+], 16, "", {
+  css: "margin: 0 0 0 32px"
+})
+
+
+const centerLayout = () => column([ 
+  column([
+    title(),
+    workspace(),
+  ], 16, "content"),
+  dates(),
+  battery(),
+  volume(),
+], 16)
+
+const endLayout = () => column([
+  hexpand(),
+  contentToggleButton(
+    column([
+      bluetooth(),
+      wifi()
+    ], 16),
+    () => {
+    }
+  )
+], 16, "", {
+  css: "margin: 0 32px 0 0"
+})
 
 export default (monitor) => barWindow(
   monitor,
   barPosition.top,
   content("bar-content", [
     centerContent(
-      column([
-      ], 16, "start-content"),
-      column([
-        column([
-          title(),
-          workspace(),
-        ],16, "content"),
-        dates(),
-        battery(),
-        volume(),
-      ], 16),
-      content("end-content", [
-        hexpand(),
-        contentToggleButton(
-          column([
-            bluetooth(),
-            wifi()
-          ], 16),
-          () => {
-          }
-        )
-      ])
+      startLayout(),
+      centerLayout(),
+      endLayout()
     )
   ])
 )

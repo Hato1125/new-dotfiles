@@ -14,39 +14,9 @@
   border-radius: 13px;
 }
 
-.start-content {
-  margin: 0 0 0 32px;
-  background-color: transparent;
-}
-
-.end-content {
-  margin: 0 32px 0 0;
-  background-color: transparent;
-}
-
-.quik-toggle-button {
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-}
-
-.screenshot-button {
-  margin: 0;
-  padding: 0 8px 0 8px;
-  background-color: transparent;
-}
-
-.screenshot-button:hover {
-  background-color: @container-high;
-}
-
-.screenshot-button:active {
-  background-color: @container-highest;
-}
-
 .focused {
-  margin: 2px 0 2px 0;
-  padding: 0 10px 0 10px;
+  min-width: 25px;
+  min-height: 25px;
   border-radius: 9999px;
   background-color: @primary;
 }
@@ -56,12 +26,8 @@
 }
 
 .unfocused {
-  margin: 2px 0 2px 0;
-  padding: 0 9px 0 9px;
+  min-width: 25px;
+  min-height: 25px;
   border-radius: 9999px;
   background-color: @container-highest;
-}
-
-.file-chooser-button {
-  background-color: transparent;
 }

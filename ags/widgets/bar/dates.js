@@ -1,4 +1,3 @@
-import { materialIcon } from "../../libs/icons.js"
 import { label } from "../../libs/widget.js"
 import { column } from "../../libs/layout.js"
 
