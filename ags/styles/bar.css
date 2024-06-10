@@ -31,3 +31,28 @@
   border-radius: 9999px;
   background-color: @container-highest;
 }
+
+.gamemode-button {
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes rainbow {
+  0.00% { color: #9141ac; }
+  8.33% { color: #1c71d8; }
+  16.66% { color: #62a0ea; }
+  25.00% { color: #2ec27e; }
+  33.33% { color: #f6d32d; }
+  41.66% { color: #ff7800; }
+  50.00% { color: #e01b24; }
+  58.33% { color: #ff7800; }
+  66.66% { color: #f6d32d; }
+  75.00% { color: #2ec27e; }
+  83.33% { color: #62a0ea; }
+  91.66% { color: #1c71d8; }
+  100.00% { color: #9141ac; }
+}
+
+.gamemode-button:checked .material-icon {
+  animation: rainbow 10s linear infinite;
+}

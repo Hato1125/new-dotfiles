@@ -23,6 +23,7 @@ import title from "./title.js"
 import wifi from "./wifi.js"
 import volume from "./volume.js"
 import bluetooth from "./bluetooth.js"
+import gamemode from "./gamemode.js"
 
 const startLayout = () => column([
 ], 16, "", {
@@ -42,14 +43,11 @@ const centerLayout = () => column([
 
 const endLayout = () => column([
   hexpand(),
-  contentToggleButton(
-    column([
-      bluetooth(),
-      wifi()
-    ], 16),
-    () => {
-    }
-  )
+  column([
+    gamemode(),
+    bluetooth(),
+    wifi()
+  ], 16),
 ], 16, "", {
   css: "margin: 0 32px 0 0"
 })

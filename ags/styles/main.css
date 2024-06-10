@@ -7,9 +7,9 @@ button {
 
 label {
   color: @on-surface;
-  font-family:  "Rubik", "Noto Sans CJK HK";
+  font-family: "Cantarell", "Rubik", "Noto Sans CJK HK";
   font-size: 15px;
-  font-weight: 400;
+  font-weight: bold;
 }
 
 .material-icon {
