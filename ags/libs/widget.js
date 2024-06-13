@@ -21,15 +21,17 @@ export const barWindow = (
 })
 
 export const popupWindow = (
-  monitor,
   position,
+  monitor,
   children,
   ...property
 ) => Widget.Window({
   class_name: "bar-window",
-  name: `popup-window`,
+  name: `popup-window-${monitor}`,
   exclusivity: "exclusive",
-  monitor: monitor,
+  layer: "overlay",
+  visible: false,
+  monitor,
   anchor: position,
   child: children,
   ...property

@@ -1,5 +1,6 @@
 @import url("./color.css");
 @import url("./bar.css");
+@import url("./quicksetting.css");
 
 button {
   background-color: transparent;

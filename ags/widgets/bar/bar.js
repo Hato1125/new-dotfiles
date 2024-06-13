@@ -6,7 +6,8 @@ import {
   content,
   button,
   hexpand,
-  contentToggleButton
+  contentToggleButton,
+  iconButton
 } from "../../libs/widget.js"
 
 import {
@@ -15,6 +16,7 @@ import {
 } from "../../libs/layout.js"
 
 import { hyprland } from "../../libs/services.js"
+import { toggleQuickSetting } from "../quicsetting/quicsetting.js"
 
 import dates from "./dates.js"
 import battery from "./battery.js"
@@ -43,11 +45,15 @@ const centerLayout = () => column([
 
 const endLayout = () => column([
   hexpand(),
-  column([
-    gamemode(),
+  gamemode(),
+  contentToggleButton(column([
     bluetooth(),
-    wifi()
-  ], 16),
+    wifi(),
+  ], 16, "", {
+    css: "margin: 0 0 0 -8px",
+  }), () => {
+    toggleQuickSetting()
+  })
 ], 16, "", {
   css: "margin: 0 32px 0 0"
 })
