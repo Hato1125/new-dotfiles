@@ -9,10 +9,6 @@ export default (monitor) => popupWindow(
   monitor,
   content("quick-setting-background", [
     row([
-      Widget.Label("aaa"),
-      Widget.Label("aaa"),
-      Widget.Label("aaa"),
-      Widget.Label("aaa"),
     ], 8)
   ], {
     css: "min-width: 515px; min-height: 510px;"

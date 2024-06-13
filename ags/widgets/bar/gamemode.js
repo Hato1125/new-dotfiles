@@ -1,4 +1,4 @@
-import Gtk from "gi://Gtk?version=3.0"
+import GLib from "gi://GLib"
 
 import { iconToggleButton } from "../../libs/widget.js"
 import {

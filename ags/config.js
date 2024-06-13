@@ -1,20 +1,18 @@
-import {
-  setting,
-  running
-} from "./main.js"
+import GLib from "gi://GLib"
 
-import bar from "./widgets/bar/bar.js"
-import quiksetting from "./widgets/quicsetting/quicsetting.js"
+const entry = App.configDir + '/main.ts'
+const outdir = '/tmp/ags/js'
+const resolvedPath = Utils.exec(`readlink ${entry}`)
 
 try {
-  setting([
-    bar,
-    quiksetting,
-  ])
-  running([
-    bar,
-    quiksetting,
-  ])
-} catch(error) {
-  print(error)
+  await Utils.execAsync(`
+    bun build ${resolvedPath}
+    --outdir /tmp/ags/js
+    --external 'gi://*'
+    --external 'resource://*'
+    --external 'file://*'
+  `);
+  await import(`file://${outdir}/main.js`);
+} catch (error) {
+  console.error(error)
 }

@@ -1,13 +1,16 @@
 import { hyprland } from "./libs/services.js"
 import { STYLE_SHEET } from "./settings.js"
 
+import bar from "./widgets/bar/bar.js"
+import quiksetting from "./widgets/quicsetting/quicsetting.js"
+
 function addWindows(window) {
   hyprland.monitors.forEach((monitor) => {
     App.addWindow(window(monitor.id))
   })
 }
 
-export function setting(windowTypes) {
+function setting(windowTypes) {
   hyprland.connect("monitor-added", (_, name) => {
     const monitorIndex = hyprland.monitors.findIndex((monitor) => {
       return monitor.name === name
@@ -26,7 +29,7 @@ export function setting(windowTypes) {
   });
 }
 
-export function running(windowsTypes) {
+function running(windowsTypes) {
   App.config({
     style: STYLE_SHEET,
     onConfigParsed: () => {
@@ -35,4 +38,17 @@ export function running(windowsTypes) {
       })
     }
   })
+}
+
+try {
+  setting([
+    bar,
+    quiksetting,
+  ])
+  running([
+    bar,
+    quiksetting,
+  ])
+} catch(error) {
+  print(error)
 }
