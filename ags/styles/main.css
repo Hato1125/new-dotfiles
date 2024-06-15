@@ -1,27 +1,3 @@
-@import url("./color.css");
+@import url("./material-color.css");
+@import url("./material-ui.css");
 @import url("./bar.css");
-@import url("./quicksetting.css");
-
-button {
-  background-color: transparent;
-}
-
-label {
-  color: @on-surface;
-  font-family: "Cantarell", "Rubik", "Noto Sans CJK HK";
-  font-size: 15px;
-  font-weight: bold;
-}
-
-.material-icon {
-  margin: 0;
-  padding: 0;
-  color: @on-surface;
-  font-family:
-    "Material Symbols Rounded",
-    "MaterialSymbolsRounded",
-    "Material Symbols Outlined",
-    "Material Symbols Sharp";
-  font-size: 22px;
-  font-weight: 400;
-}

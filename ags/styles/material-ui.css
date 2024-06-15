@@ -1,0 +1,26 @@
+label {
+  color: @on-surface;
+  font-family: "Cantarell", "Rubik", "Noto Sans CJK HK";
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.material-window {
+  background-color: @surface;
+}
+
+.material-box {
+  background-color: @container-normal;
+  border-radius: 13px;
+}
+
+.material-icon {
+  color: @on-surface;
+  font-family:
+    "Material Symbols Rounded",
+    "MaterialSymbolsRounded",
+    "Material Symbols Outlined",
+    "Material Symbols Sharp";
+  font-size: 22px;
+  font-weight: 400;
+}
