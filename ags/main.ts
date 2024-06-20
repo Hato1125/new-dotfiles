@@ -1,6 +1,12 @@
 import { hyprland } from "./libs/services"
 
-import bar from "./widgets/bar/bar.js"
+import bar from "./widgets/bar/bar"
+import {
+  cornerTopLeft,
+  cornerTopRight,
+  cornerBottomLeft,
+  cornerBottomRight,
+} from "./widgets/roundcorner/roundcorner"
 
 function addWindows(window): void {
   hyprland.monitors.forEach((monitor) => {
@@ -41,9 +47,17 @@ function running(windowsTypes): void  {
 try {
   setting([
     bar,
+    cornerTopLeft,
+    cornerTopRight,
+    cornerBottomLeft,
+    cornerBottomRight,
   ])
   running([
     bar,
+    cornerTopLeft,
+    cornerTopRight,
+    cornerBottomLeft,
+    cornerBottomRight,
   ])
 } catch(error) {
   console.error(error)

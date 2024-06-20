@@ -65,6 +65,7 @@ export namespace MaterialUI {
     ...property
   })
 
+
   export const icon = (
     text: string,
     property: any[] = {}

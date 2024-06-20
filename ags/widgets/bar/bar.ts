@@ -1,5 +1,6 @@
 import { MaterialUI } from '../../libs/materialUI'
 import { Layout } from '../../libs/layout'
+import { RoundedCorner } from '../roundcorner/roundcorner'
 
 import dates from './dates'
 import battery from './battery'
@@ -20,10 +21,16 @@ export default (monitor) => MaterialUI.window(
   monitor,
   position,
   MaterialUI.centerBox(
-    Layout.column([
-    ], 16,
+    MaterialUI.box([
+      RoundedCorner("topleft", {className: "black-corner"}),
+      Layout.column([
+      ], 16,
+      {
+        css: 'margin: 0 0 0 32px'
+      }),
+    ],
     {
-      css: 'margin: 0 0 0 32px'
+      class_name: ""
     }),
     Layout.column([
       MaterialUI.box([
@@ -36,13 +43,19 @@ export default (monitor) => MaterialUI.window(
       volume(),
       battery(),
     ], 16),
-    Layout.column([
+    MaterialUI.box([
       MaterialUI.hexpand(),
-      bluetooth(),
-      wifi(),
-    ], 16,
+      Layout.column([
+        bluetooth(),
+        wifi(),
+      ], 16,
+      {
+        css: 'margin: 0 32px 0 0'
+      }),
+      RoundedCorner("topright", {className: "black-corner"}),
+    ],
     {
-      css: 'margin: 0 32px 0 0'
-    })
+      class_name: ""
+    }),
   )
-);
+)

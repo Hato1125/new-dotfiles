@@ -1,7 +1,7 @@
 label {
   color: @on-surface;
   font-family: "Cantarell", "Rubik", "Noto Sans CJK HK";
-  font-size: 15px;
+  font-size: 14px;
   font-weight: bold;
 }
 
@@ -21,6 +21,6 @@ label {
     "MaterialSymbolsRounded",
     "Material Symbols Outlined",
     "Material Symbols Sharp";
-  font-size: 22px;
+  font-size: 21px;
   font-weight: 400;
 }

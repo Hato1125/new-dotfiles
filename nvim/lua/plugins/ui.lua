@@ -1,9 +1,9 @@
 return {
   {
-    'EdenEast/nightfox.nvim',
+    'arzg/vim-colors-xcode',
     config = function()
       vim.cmd("set background=light")
-      vim.cmd.colorscheme('dawnfox')
+      vim.cmd.colorscheme('xcode')
     end,
   },
   {
