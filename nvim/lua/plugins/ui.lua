@@ -49,23 +49,23 @@ return {
       { '<leader>fg', ':Telescope live_grep<return>', desc = 'Live grep' },
     },
     config = function()
-      require('telescope').setup{
-      }
-    end
-  },
-  {
-    'sudormrfbin/cheatsheet.nvim',
-    dependencies = {
-      'nvim-telescope/telescope.nvim',
-      'nvim-lua/popup.nvim',
-      'nvim-lua/plenary.nvim',
-    },
-    cmd = 'Cheatsheet',
-    keys = {
-      { '<leader>cc', ':Cheatsheet<return>', desc = 'Cheatsheet' }
-    },
-    config = function()
-      require('cheatsheet').setup{
+      require('telescope').setup {
+        extensions = {
+          file_browser = {
+            grouped = true
+          }
+        },
+        pickers = {
+          find_files = {
+            hidden = true
+          }
+        },
+        defaults = {
+          sorting_strategy = 'ascending',
+          layout_config = {
+            prompt_position = 'top'
+          }
+        }
       }
     end
   },

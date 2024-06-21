@@ -63,8 +63,7 @@ export namespace MaterialUI {
     child: children,
     onClicked: click,
     ...property
-  })
-
+  });
 
   export const icon = (
     text: string,
