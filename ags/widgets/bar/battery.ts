@@ -24,9 +24,15 @@ const batteryChargingIcons = [
   'battery_full',
 ];
 
+const percent = battery.bind('percent');
+
+const batteryClassName = (className: string) =>
+  percent.as(p => `${className} ${p <= 20 ? 'warning' : ''}`);
+
 const batteryIcon = () => MaterialUI.icon(
   'battery_0_bar',
   {
+    class_name: batteryClassName('material-icon'),
     setup: self => self.hook(battery, () => {
       const icons = battery.charging
         ? batteryChargingIcons
@@ -34,11 +40,14 @@ const batteryIcon = () => MaterialUI.icon(
       const inc = 100 / (icons.length - 1);
       const index = Math.floor(battery.percent / inc);
       self.label = icons[index];
-  })
+    }),
 });
 
 const batteryLabel = () => MaterialUI.label(
-  battery.bind('percent').as(p => `${p}%`)
+  percent.as(p => `${p}%`),
+  {
+    class_name: batteryClassName('material-label')
+  }
 );
 
 export default () => MaterialUI.box([
@@ -46,4 +55,6 @@ export default () => MaterialUI.box([
     batteryIcon(),
     batteryLabel()
   ], 4)
-]);
+], {
+  class_name: batteryClassName('material-box')
+});

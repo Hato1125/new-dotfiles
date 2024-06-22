@@ -18,12 +18,10 @@
   background-color: @container-highest;
 }
 
-.surface-corner {
-  background-color: @surface;
-  border-radius: 20px;
+.warning {
+  color: #ba1a1a;
 }
 
-.black-corner {
-  background-color: black;
-  border-radius: 20px;
+.material-box.warning {
+  background-color: #ffdad6;
 }
