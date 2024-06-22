@@ -4,8 +4,8 @@ import { MaterialUI } from '../../libs/materialUI'
 const { Gtk } = imports.gi;
 const Lang = imports.lang;
 
-export const RoundedCorner = (place, props) => Widget.DrawingArea({
-  ...props,
+export const RoundedCorner = (place, name) => Widget.DrawingArea({
+  class_name: name,
   hpack: place.includes('left') ? 'start' : 'end',
   vpack: place.includes('top') ? 'start' : 'end',
   setup: (widget) => Utils.timeout(1, () => {
@@ -41,14 +41,15 @@ export const RoundedCorner = (place, props) => Widget.DrawingArea({
 const roundedCornerWindow = (
   monitor: number,
   name: string,
-  position: MaterialUI.position[]
+  layer: string,
+  position: MaterialUI.Position[]
 ) => MaterialUI.window(
   `${position[0]}${position[1]}`,
   monitor,
   position,
-  RoundedCorner(`${position[0]}${position[1]}`, {className: name}),
+  RoundedCorner(`${position[0]}${position[1]}`, name),
   {
-    layer: 'overlay',
+    layer: layer,
     exclusivity: 'normal',
     class_name: ''
   }
@@ -57,35 +58,39 @@ const roundedCornerWindow = (
 export const cornerTopLeft = (monitor) => roundedCornerWindow(
   monitor,
   'surface-corner',
+  'top',
   [
-    MaterialUI.position.top,
-    MaterialUI.position.left,
+    MaterialUI.Position.Top,
+    MaterialUI.Position.Left,
   ]
 );
 
 export const cornerTopRight = (monitor) => roundedCornerWindow(
   monitor,
   'surface-corner',
+  'top',
   [
-    MaterialUI.position.top,
-    MaterialUI.position.right,
+    MaterialUI.Position.Top,
+    MaterialUI.Position.Right,
   ]
 );
 
 export const cornerBottomLeft = (monitor) => roundedCornerWindow(
   monitor,
   'black-corner',
+  'overlay',
   [
-    MaterialUI.position.bottom,
-    MaterialUI.position.left,
+    MaterialUI.Position.Bottom,
+    MaterialUI.Position.Left,
   ]
 );
 
 export const cornerBottomRight = (monitor) => roundedCornerWindow(
   monitor,
   'black-corner',
+  'overlay',
   [
-    MaterialUI.position.bottom,
-    MaterialUI.position.right,
+    MaterialUI.Position.Bottom,
+    MaterialUI.Position.Right,
   ]
 );

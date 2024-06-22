@@ -1,0 +1,11 @@
+.roundedcorner {
+  border-radius: 20px;
+}
+
+.surface-corner {
+  background-color: @surface;
+}
+
+.black-corner {
+  background-color: black;
+}

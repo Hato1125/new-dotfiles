@@ -1,9 +1,9 @@
 export namespace MaterialUI {
-  export enum position {
-    top = 'top',
-    bottom = 'bottom',
-    left = 'left',
-    right = 'right',
+  export enum Position {
+    Top = 'top',
+    Bottom = 'bottom',
+    Left = 'left',
+    Right = 'right',
   };
 
   export const window = (

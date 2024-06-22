@@ -1,28 +1,33 @@
-import { MaterialUI } from '../../libs/materialUI'
-import { network } from '../../libs/services'
+import { MaterialUI } from '../../libs/materialUI';
+import { network } from '../../libs/services';
 
-const wifi_icons = [
+const wifiIcons = [
   'signal_wifi_0_bar',
   'network_wifi_1_bar',
   'network_wifi_2_bar',
   'network_wifi_3_bar',
   'signal_wifi_4_bar',
-]
-
-const wifi = network.wifi
+];
 
 export default () => MaterialUI.icon(
   'network_wifi_0_bar',
   {
     setup: self => self.hook(network, () => {
-      if(wifi.internet === 'disconnected'
-        || wifi.internet === 'connecting') {
-        self.label = 'signal_wifi_off'
-      } else {
-        const element = 100 / 4
-        const index = Math.floor(wifi.strength / element)
-        self.label = wifi_icons[index]
+      const wifi = network.wifi;
+
+      if(!wifi.enabled) {
+        self.label = 'signal_wifi_bad';
+        return;
       }
+
+      if(wifi.internet === 'disconnected' || wifi.internet === 'connecting') {
+        self.label = 'signal_wifi_off';
+        return;
+      }
+
+      const inc = 100 / (wifiIcons.length - 1);
+      const index = Math.floor(wifi.strength / inc);
+      self.label = wifiIcons[index];
     }
   )
-})
+});
