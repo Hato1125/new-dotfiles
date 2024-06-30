@@ -51,6 +51,7 @@ export namespace MaterialUI {
     text: string,
     property: any[] = {}
   ) => Widget.Label({
+    class_name: 'material-label',
     label: text,
     ...property
   });

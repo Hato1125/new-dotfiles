@@ -30,14 +30,14 @@ const centerLayout = () => Layout.column([
   ]),
   dates(),
   volume(),
-  battery(),
 ], 16);
 
 const endLayout = () => MaterialUI.box([
   MaterialUI.hexpand(),
   Layout.column([
-    bluetooth(),
+    battery(),
     wifi(),
+    bluetooth(),
   ], 16, {
     css: 'margin-right: 32px',
   }),

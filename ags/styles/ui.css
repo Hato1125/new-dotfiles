@@ -1,8 +1,11 @@
-label {
+* {
+  font-family: "Cantarell", "Noto Sans CJK HK";
+}
+
+.material-label {
   color: @on-surface;
-  font-family: "Cantarell", "Rubik", "Noto Sans CJK HK";
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .material-window {
