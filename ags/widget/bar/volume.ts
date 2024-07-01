@@ -1,6 +1,6 @@
-import { MaterialUI } from '../../libs/materialUI';
-import { Layout } from '../../libs/Layout';
-import { audio } from '../../libs/services';
+import { MaterialUI } from '../../lib/materialUI';
+import { Layout } from '../../lib/Layout';
+import { audio } from '../../lib/services';
 
 const volume = audio['speaker'].bind('volume');
 

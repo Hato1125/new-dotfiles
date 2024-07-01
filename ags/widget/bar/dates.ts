@@ -1,5 +1,5 @@
-import { MaterialUI } from '../../libs/materialUI';
-import { Layout } from '../../libs/layout';
+import { MaterialUI } from '../../lib/materialUI';
+import { Layout } from '../../lib/layout';
 
 const date = Variable('', {
   poll: [1000, 'date "+%m/%d"']

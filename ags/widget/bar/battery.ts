@@ -1,6 +1,6 @@
-import { MaterialUI } from '../../libs/materialUI';
-import { Layout } from '../../libs/layout';
-import { battery } from '../../libs/services';
+import { MaterialUI } from '../../lib/materialUI';
+import { Layout } from '../../lib/layout';
+import { battery } from '../../lib/services';
 
 const batteryIcons = [
   'battery_0_bar',

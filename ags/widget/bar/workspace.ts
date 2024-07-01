@@ -1,6 +1,6 @@
-import { Layout } from '../../libs/layout';
-import { MaterialUI } from '../../libs/materialUI';
-import { hyprland } from '../../libs/services';
+import { Layout } from '../../lib/layout';
+import { MaterialUI } from '../../lib/materialUI';
+import { hyprland } from '../../lib/services';
 
 const workspaceNumber = (activeWorkspace, id) => MaterialUI.label(
   `${id}`,

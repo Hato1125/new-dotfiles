@@ -1,12 +1,12 @@
-import { hyprland } from './libs/services';
+import { hyprland } from './lib/services';
 
-import bar from './widgets/bar/bar';
+import bar from './widget/bar/bar';
 import {
   cornerTopLeft,
   cornerTopRight,
   cornerBottomLeft,
   cornerBottomRight,
-} from './widgets/roundcorner/roundcorner';
+} from './widget/roundcorner/roundcorner';
 
 const desktopWidgets = [
   bar,

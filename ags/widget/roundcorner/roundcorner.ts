@@ -1,5 +1,5 @@
 import Widget from 'resource:///com/github/Aylur/ags/widget.js';
-import { MaterialUI } from '../../libs/materialUI'
+import { MaterialUI } from '../../lib/materialUI'
 
 const { Gtk } = imports.gi;
 const Lang = imports.lang;

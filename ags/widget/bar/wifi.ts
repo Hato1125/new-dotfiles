@@ -1,5 +1,5 @@
-import { MaterialUI } from '../../libs/materialUI';
-import { network } from '../../libs/services';
+import { MaterialUI } from '../../lib/materialUI';
+import { network } from '../../lib/services';
 
 const wifiIcons = [
   'signal_wifi_0_bar',

@@ -1,5 +1,5 @@
-import { MaterialUI } from '../../libs/materialUI';
-import { Layout } from '../../libs/layout';
+import { MaterialUI } from '../../lib/materialUI';
+import { Layout } from '../../lib/layout';
 import { RoundedCorner } from '../roundcorner/roundcorner';
 
 import dates from './dates';

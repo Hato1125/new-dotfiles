@@ -1,13 +1,12 @@
-const CSS_DIR = `${App.configDir}/styles`;
-const CSS_PATH = `${CSS_DIR}/main.css`;
+import { STYLE_DIR, CSS_PATH } from './core';
 
 export default function() {
   try {
-    App.applyCss(CSS_PATH);
     Utils.monitorFile(
-      CSS_DIR,
+      STYLE_DIR,
       function() {
-        App.applyCss(CSS_PATH, true);
+        App.resetCss();
+        App.applyCss(CSS_PATH);
       }
     );
   } catch(error) {

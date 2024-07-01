@@ -1,18 +1,17 @@
-import GLib from "gi://GLib"
+import { getLinkTarget } from './lib/utils.js';
 
-const entry = App.configDir + '/main.ts'
-const outdir = '/tmp/ags/js'
-const resolvedPath = Utils.exec(`readlink ${entry}`)
+const ENTRY = `${App.configDir}/main.ts`;
+const OUTPUT = '/tmp/ags/js';
 
 try {
   await Utils.execAsync(`
-    bun build ${resolvedPath}
+    bun build ${getLinkTarget(ENTRY)}
     --outdir /tmp/ags/js
     --external 'gi://*'
     --external 'resource://*'
     --external 'file://*'
   `);
-  await import(`file://${outdir}/main.js`);
+  await import(`file://${OUTPUT}/main.js`);
 } catch (error) {
-  console.error(error)
+  console.error(error);
 }

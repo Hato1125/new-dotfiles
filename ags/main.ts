@@ -1,9 +1,13 @@
+import core from './core';
 import style from './style';
 import desktop from './desktop';
 
-App.config({
-  onConfigParsed: () => {
-    style();
-    desktop();
-  }
+
+core(() => {
+  App.config({
+    onConfigParsed: () => {
+      style();
+      desktop();
+    }
+  });
 });
